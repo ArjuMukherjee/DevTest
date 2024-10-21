@@ -24,8 +24,13 @@
       }
     ],
     "env": {
-      "DJANGO_SETTINGS_MODULE": "your_project.settings",
+      "DJANGO_SETTINGS_MODULE": "DevTest.settings",
       "PYTHONUNBUFFERED": "1"
+    },
+    "functions": {
+      "python": {
+        "runtime": "python3.12"
+      }
     }
   }
   
