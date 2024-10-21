@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-76%!@mr_jaad&ivzfi6qatukb16c734&p)+arb()g!ahzj&ic(
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '.vercel.app'
+    '.vercel.app','localhost','127.0.0.1'
 ]
 
 
@@ -88,14 +88,8 @@ WSGI_APPLICATION = 'DevTest.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(default=config('DATABASE_URL'))
 }
-
-DATABASES['default'] = dj_database_url.config()
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
