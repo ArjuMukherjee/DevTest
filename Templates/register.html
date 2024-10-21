@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <br><br>
+    <div class="centered-container">
+        <div class="card">
+            <div class="card-header text-center" style="background-color: black;">
+                <h4>Create Your Account</h4>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <!-- Username field -->
+                    <div class="form-group">
+                        {{ form.username }}
+                        {% if form.username.errors %}
+                            <br>
+                            <div class="text-danger">{{ form.username.errors }}</div>
+                        {% endif %}
+                    </div><br>
+
+                    <!-- Email field -->
+                    <div class="form-group">
+                        {{ form.email }}
+                        {% if form.email.errors %}
+                            <br>
+                            <div class="text-danger">{{ form.email.errors }}</div>
+                        {% endif %}
+                    </div><br>
+
+                    <!-- Password field -->
+                    <div class="form-group">
+                        {{ form.password1 }}
+                        {% if form.password1.errors %}
+                            <br>
+                            <div class="text-danger">{{ form.password1.errors }}</div>
+                        {% endif %}
+                    </div><br>
+
+                    <!-- Confirm Password field -->
+                    <div class="form-group">
+                        {{ form.password2 }}
+                        {% if form.password2.errors %}
+                            <br>
+                            <div class="text-danger">{{ form.password2.errors }}</div>
+                        {% endif %}
+                    </div><br>
+
+                    <!-- Register button -->
+                    <button type="submit" class="btn btn-dark w-100">Register</button>
+                </form>
+                <div class="text-center mt-3">
+                    <a href="{% url 'login' %}">Already have an account? Login here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block content %}
+<!-- users/templates/users/profile.html -->
+<div class="container mt-5">
+    <br><br>
+    <div class="centered-container">
+        <div class="card" style="max-width: 800px;">
+            <div class="card-header text-center" style="background-color: black;">
+                <h3>User Profile</h3>
+            </div>
+            <div class="card-body">
+                <h1>{{ request.user.username }}</h1>
+                <p>{{ request.user.email }}</p>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <div>
+                        <a href="{% url 'edit_profile' %}" class="btn btn-dark me-2">Edit Profile</a>
+                        <a href="{% url 'delete_profile' %}" class="btn btn-danger me-2">Delete Profile</a>
+                        <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-secondary">Logout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+<br>
+{% endblock content %}

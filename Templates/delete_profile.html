@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Delete Profile</h1>
+    <div class="centered-container">
+        <div class="card" style="max-width: 600px; margin: auto;">
+            <div class="card-header text-center" style="background-color: black;">
+                <h4>Are You Sure?</h4>
+            </div>
+            <div class="card-body text-center">
+                <br>
+                <p>Are you sure you want to delete your profile? This action cannot be undone.</p>
+                <br>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="d-flex justify-content-end mt-3">
+                        <div class="me-2">
+                            <button type="submit" class="btn btn-danger">Delete my Account</button>
+                        </div>
+                        <div>
+                            <a href="{% url 'profile' %}" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
