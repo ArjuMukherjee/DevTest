@@ -75,7 +75,7 @@ def form_view(request):
                     subject = email_subject,
                     attachments = summary_xlsx.name
                 )
-
+                print(response, msg)
                 return render(request, 'input_form.html', {'summary': summary_html, 'report_xlsx': summary_xlsx.name})
             except Exception as e:
                 form.add_error('file', f"Error processing file: {e}")
