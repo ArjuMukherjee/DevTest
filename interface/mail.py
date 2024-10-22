@@ -23,9 +23,7 @@ def send_mail(to, subject="", body="", attachments=""):
         encoders.encode_base64(part)
         part.add_header('Content-Disposition', 'attachment; filename="Summary_Report.xlsx"')
         msg.attach(part)
-
-    print(EMAIL_HOST_USER)
-
+    
     msg['Subject'] = subject
     msg['From'] = EMAIL_HOST_USER
     msg['To'] = to
