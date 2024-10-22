@@ -27,6 +27,7 @@ def send_mail(to, subject="", body="", attachments=""):
     msg['Subject'] = subject
     msg['From'] = EMAIL_HOST_USER
     msg['To'] = to
+    print(EMAIL_HOST_USER)
     try:
         server.login(EMAIL_HOST_USER,EMAIL_HOST_PASSWORD)
 
