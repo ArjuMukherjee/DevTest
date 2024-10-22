@@ -59,7 +59,6 @@ def form_view(request):
 
                 # Email content
                 user_email = request.user.email
-                print(user_email)
                 email_subject = 'Python Assignment - Arju Mukherjee'
                 email_body = f"""
                 Hello,
